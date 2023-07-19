@@ -1,0 +1,4 @@
+UPDATE ratings set rating=5 where member='admin' and  snackid=108 
+update snacks left join ( select snackid, count(rating) cn, avg(rating) av from ratings where snackid=108) t on snacks.id=t.snackid set rating=av, starcount=cn where id=108
+UPDATE ratings set rating=3 where member='admin' and  snackid=111 
+update snacks left join ( select snackid, count(rating) cn, avg(rating) av from ratings where snackid=111) t on snacks.id=t.snackid set rating=av, starcount=cn where id=111

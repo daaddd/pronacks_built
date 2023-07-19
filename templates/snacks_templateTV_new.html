@@ -1,0 +1,65 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the  and  formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the snacks_init() hook (in hooks/snacks.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+		
+<div class="i_card-content">
+	<div class="i_card" style="width:300px;" data-id="<%%VALUE(ID)%%>" data-protein="<%%VALUE(protein)%%>" data-calories="<%%VALUE(calories)%%>" data-fat="<%%VALUE(fat)%%>" data-fiber="<%%VALUE(fiber)%%>" data-carbs="<%%VALUE(carbs)%%>" data-sodium="<%%VALUE(sodium)%%>">
+
+		<div class="favorites">
+			<input class="toggle-heart toggle-heart-ind"  id="toggle-heart-<%%VALUE(ID)%%>" type="checkbox" value="<%%VALUE(favorite)%%>"/>
+			<label class="toggle-heart-label" for="toggle-heart-<%%VALUE(ID)%%>" aria-label="like">Favorite ❤</label>
+		</div>
+
+		<div style="cursor:pointer;" onclick="window.open('<%%VALUE(am_link)%%>');window.close();">
+			<div  class="imgContainer">
+				<div style="background:url(<%%VALUE(Illustration)%%>)" class="imgParameter"></div>
+				<div class="popup">
+					<img src="<%%VALUE(Illustration)%%>" class="" alt="">
+				</div>
+			</div>
+		</div>
+
+		<div style="margin:10px;margin-bottom:0px !important;height:auto;">
+			<a class="name" target="_blank" href="<%%VALUE(am_link)%%>"><%%VALUE(item)%%></a>
+			<%%VALUE(brand)%%><br>
+			<%%VALUE(category)%%> - <%%VALUE(flavor)%%><br>
+			Serving Size: <%%VALUE(serving_size)%%>
+		</div>
+
+		<div class="tstarrating" id="tStarRating-<%%VALUE(ID)%%>" title="Rate this" data-id="<%%VALUE(ID)%%>">
+			<div class="st sp" data-val="0" style="width:0px;"></div>
+			<div class="st emptyStar trans" data-content="★" data-val="1" id="st1">★</div>
+			<div class="st sp" data-val="1"></div><div class="st emptyStar trans" data-content="★" data-val="2" id="st2">★</div>
+			<div class="st sp" data-val="2"></div><div class="st emptyStar trans" data-content="★" data-val="3" id="st3">★</div>
+			<div class="st sp" data-val="3"></div><div class="st emptyStar trans" data-content="★" data-val="4" id="st4">★</div>
+			<div class="st sp" data-val="4"></div><div class="st emptyStar trans" data-content="★" data-val="5" id="st5">★</div>
+			<div class="st sp" data-val="5"></div>
+		</div>
+
+		<div class="startextcontainer" >
+			<div id="MyStarText-<%%VALUE(ID)%%>" class="MyStarText" style="font-size:10px; height:22px; margin-top: 4px;">
+				Be first to Rate this!
+			</div>
+			<div id="StarText-<%%VALUE(ID)%%>" class="StarText" data-avg="<%%VALUE(rating)%%>" data-count="<%%VALUE(starcount)%%>" style="visibility:hidden; font-size:10px; margin-bottom: 10px; margin-top: -5px;">
+			Avg : <%%VALUE(rating)%%> / <%%VALUE(starcount)%%> ratings
+			</div>
+		</div>
+
+		<div class="facts" > NUTRITION FACTS PER SERVING: </div>
+
+		<div class="i_container">
+		  <img src="macrosbg_en.png?id=1" alt="" style="width:100%;height:auto;">
+		  <div style="color:#aa7854;" data-protein="<%%VALUE(protein)%%>" class="protein bottom-left"><%%VALUE(protein)%%> g</div>
+		  <div style="color:#db5d4f;" data-calories="<%%VALUE(calories)%%>" class="calories top-left"><%%VALUE(calories)%%> kcal</div>
+		  <div style="color:#e88b4e;" data-fat="<%%VALUE(fat)%%>" class="fat top-center"><%%VALUE(fat)%%> g</div>
+		  <div style="color:#5fb55b;" data-fiber="<%%VALUE(fiber)%%>" class="fiber bottom-center"><%%VALUE(fiber)%%> g</div>
+		  <div style="color:#f0ac4e;" data-carbs="<%%VALUE(carbs)%%>" class="carbs top-right"><%%VALUE(carbs)%%> g</div>
+		  <div style="color:#9A9A9A;" data-sodium="<%%VALUE(sodium)%%>" class="sodium bottom-right"><%%VALUE(sodium)%%> mg</div>
+		</div> 
+ 
+	</div>
+</div>
+
